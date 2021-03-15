@@ -1,11 +1,19 @@
+/* reset css */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+/* App css */
+.main {
+    margin: auto;
+    max-width: 960px;
 }

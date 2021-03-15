@@ -51,9 +51,11 @@ export default function App() {
   return (
     <div className="App">
       <Nav />
-      <Header {...content.header} />
-      <Stats />
-      <Project {...content.project} />
+      <main className="main">
+        <Header {...content.header} />
+        <Stats />
+        <Project {...content.project} />
+      </main>
     </div>
   );
 }
