@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 150px;
+  color: white;
+  height: 350px;
+  background-color: black;
+}
+.nav__logo {
+  font-size: 15px;
+  font-weight: bold;
+}
+.nav__menu {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}

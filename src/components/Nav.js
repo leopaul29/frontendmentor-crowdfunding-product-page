@@ -4,13 +4,13 @@ export default function Nav() {
   return (
     <nav className="nav">
       <div className="nav__right">
-        <div className="logo">crowdfund</div>
+        <div className="nav__logo">crowdfund</div>
       </div>
       <div className="nav__left">
-        <ul>
-          <li>About</li>
-          <li>Discover</li>
-          <li>Get Started</li>
+        <ul className="nav__menu">
+          <li className="menu__item">About</li>
+          <li className="menu__item">Discover</li>
+          <li className="menu__item">Get Started</li>
         </ul>
       </div>
     </nav>
