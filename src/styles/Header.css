@@ -1,0 +1,37 @@
+.header {
+  position: relative;
+  background-color: white;
+  top: -50px;
+}
+.header__logo {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+}
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.header__actions {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+}
+.header__subtitle {
+  font-weight: 400;
+  color: var(--gray);
+}
+.header__bookmark {
+  border: var(--gray) 1px solid;
+  background-color: var(--gray);
+  border-radius: 50px;
+}
