@@ -1,3 +1,4 @@
+import "../styles/Project.css";
 import Card from "./Card";
 
 export default function Project(props) {

@@ -1,3 +1,5 @@
+import "../styles/Header.css";
+
 export default function Header(props) {
   const { title, subtitle, mainButton, bookmarkButton } = props;
 

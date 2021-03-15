@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Project from "./components/Project";
@@ -7,8 +7,9 @@ import Stats from "./components/Stats";
 export default function App() {
   const content = {
     header: {
-      title:"Mastercraft Bamboo Monitor Riser",
-      subtitle:"A beautiful & handcrafted monitor stand to reduce neck and eye strain.",
+      title: "Mastercraft Bamboo Monitor Riser",
+      subtitle:
+        "A beautiful & handcrafted monitor stand to reduce neck and eye strain.",
     },
     project: {
       title: "About this project",
@@ -44,15 +45,15 @@ export default function App() {
           daysLeft: "0",
           buttonText: "Out of Stock",
         },
-      ],  
-    }
-  }
+      ],
+    },
+  };
   return (
     <div className="App">
       <Nav />
-      <Header {...content.header}/>
-      <Stats/>
-      <Project {...content.project}/>
+      <Header {...content.header} />
+      <Stats />
+      <Project {...content.project} />
     </div>
   );
 }
