@@ -12,8 +12,46 @@ a {
   text-decoration: none;
 }
 
+/* css variables */
+@font-face {
+  font-family: commissioner;
+  src: url("./Commissioner/Commissioner-VariableFont_wght.ttf");
+}
+
+* {
+  --primary: hsl(176, 50%, 47%);
+  --secondary: hsl(176, 72%, 28%);
+  --black: hsl(0, 0%, 0%);
+  --gray: hsl(0, 0%, 48%);
+
+  font-size: 16px;
+  font-family: commissioner;
+  font-weight: 500;
+}
+
 /* App css */
+.app {
+  max-width: 1440px;
+  margin: auto;
+}
 .main {
-    margin: auto;
-    max-width: 960px;
+  margin: auto;
+  max-width: 960px;
+}
+.tile {
+  border: var(--gray) 1px solid;
+  border-radius: 10px;
+  padding: 45px;
+}
+.btn {
+  border: var(--primary) 1px solid;
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-action {
+  background-color: var(--primary);
+  color: white;
 }

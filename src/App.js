@@ -49,7 +49,7 @@ export default function App() {
     },
   };
   return (
-    <div className="App">
+    <div className="app">
       <Nav />
       <main className="main">
         <Header {...content.header} />
