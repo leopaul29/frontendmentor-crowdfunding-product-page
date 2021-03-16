@@ -10,6 +10,7 @@
   font-size: 15px;
   font-weight: 700;
   color: white;
+  cursor: pointer;
 }
 .nav__menu {
   display: flex;
@@ -18,4 +19,5 @@
 }
 .menu__item {
   color: white;
+  cursor: pointer;
 }
