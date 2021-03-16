@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
+  font-family: commissioner;
+  font-weight: 500;
+  color: var(--gray);
 }
 ol,
 ul {
@@ -18,15 +22,11 @@ a {
   src: url("./Commissioner/Commissioner-VariableFont_wght.ttf");
 }
 
-* {
+:root {
   --primary: hsl(176, 50%, 47%);
   --secondary: hsl(176, 72%, 28%);
   --black: hsl(0, 0%, 0%);
   --gray: hsl(0, 0%, 48%);
-
-  font-size: 16px;
-  font-family: commissioner;
-  font-weight: 500;
 }
 
 /* App css */
@@ -49,15 +49,29 @@ a {
   padding: 15px 30px;
   font-weight: 700;
   cursor: pointer;
+  color: white;
 }
 
-.btn-action {
+.btn-primary {
   background-color: var(--primary);
-  color: white;
+}
+.btn-secondary {
+  background-color: var(--gray);
 }
 
 .number {
   font-weight: 700;
   color: var(--black);
   font-size: 24px;
+}
+
+.title {
+  font-weight: 700;
+  color: var(--black);
+  font-size: 20px;
+}
+
+.text {
+  letter-spacing: 0.5px;
+  line-height: 1.5;
 }
