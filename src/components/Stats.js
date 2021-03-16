@@ -2,7 +2,7 @@ import "../styles/Stats.css";
 
 export default function Stats() {
   return (
-    <div className="stats tile">
+    <div className="stats tile tile-padding">
       <div className="stats__row">
         <div className="stats__totalBacked">
           <p className="number">$89,914</p>

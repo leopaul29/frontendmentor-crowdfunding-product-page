@@ -4,7 +4,7 @@ export default function Header(props) {
   const { title, subtitle, mainButton, bookmarkButton } = props;
 
   return (
-    <header className="header tile">
+    <header className="header tile tile-padding">
       <div className="header__logo">
         <img src="./images/logo-mastercraft.svg" alt="logo-mastercraft" />
       </div>
