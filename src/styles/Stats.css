@@ -1,0 +1,27 @@
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.stats__separator {
+  border: var(--gray) 1px solid;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 30px;
+}
+.progress-grey {
+  background-color: lightgray;
+  width: 100%;
+}
+.progress-primary {
+  background-color: var(--primary);
+  width: 30%;
+}
