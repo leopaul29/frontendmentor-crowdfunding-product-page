@@ -21,12 +21,33 @@ a {
   font-family: commissioner;
   src: url("./Commissioner/Commissioner-VariableFont_wght.ttf");
 }
+@font-face {
+  font-family: commissioner;
+  src: url("./Commissioner/static/Commissioner-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: commissioner;
+  src: url("./Commissioner/static/Commissioner-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: commissioner;
+  src: url("./Commissioner/static/Commissioner-Light.ttf");
+  font-weight: 400;
+}
 
 :root {
   --primary: hsl(176, 50%, 47%);
-  --secondary: hsl(176, 72%, 28%);
+  --primary-active: hsl(176, 72%, 28%);
+  --secondary: hsl(0, 0%, 68%);
+  --secondary-active: hsl(0, 0%, 52%);
   --black: hsl(0, 0%, 0%);
   --gray: hsl(0, 0%, 48%);
+  --extralightgray: hsl(0, 0%, 88%);
+}
+body {
+  background-color: snow;
 }
 
 /* App css */
@@ -35,16 +56,22 @@ a {
   margin: auto;
 }
 .main {
+  position: relative;
   margin: auto;
-  max-width: 700px;
+  max-width: 760px;
+  top: -75px;
 }
 .tile {
-  border: var(--gray) 1px solid;
+  border: var(--extralightgray) 1px solid;
   border-radius: 10px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
+  background-color: white;
 }
 .tile-padding {
   padding: 45px;
+}
+.tile-disabled{
+  opacity: 0.5;
 }
 .btn {
   border-radius: 50px;
@@ -57,10 +84,22 @@ a {
 .btn-primary {
   background-color: var(--primary);
 }
-.btn-secondary {
-  background-color: var(--gray);
+.btn-primary:hover {
+  background-color: var(--primary-active);
 }
-
+.btn-secondary {
+  background-color: var(--secondary);
+}
+.btn-secondary:hover {
+  background-color: var(--secondary-active);
+}
+.btn-disabled {
+  cursor: default;
+  background-color: var(--secondary);
+}
+.btn-disabled:hover  {
+  background-color: var(--secondary);
+}
 .number {
   font-weight: 700;
   color: var(--black);
@@ -74,6 +113,5 @@ a {
 }
 
 .text {
-  letter-spacing: 0.5px;
   line-height: 1.5;
 }

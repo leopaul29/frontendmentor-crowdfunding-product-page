@@ -4,17 +4,17 @@ export default function Stats() {
   return (
     <div className="stats tile tile-padding">
       <div className="stats__row">
-        <div className="stats__totalBacked">
+        <div className="stats__totalBacked stats__inner">
           <p className="number">$89,914</p>
           <p className="text">of $100,000 backed</p>
         </div>
-        <hr className="stats__separator" />
-        <div className="stats__totalBackers">
+        <hr className="stats__separator " />
+        <div className="stats__totalBackers stats__inner">
           <p className="number"> 5,007</p>
           <p className="text">total backers</p>
         </div>
         <hr className="stats__separator" />
-        <div className="stats__daysLeft">
+        <div className="stats__daysLeft stats__inner">
           <p className="number">56</p>
           <p className="text">days left</p>{" "}
         </div>

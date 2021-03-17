@@ -3,6 +3,7 @@ import "../styles/Nav.css";
 export default function Nav() {
   return (
     <nav className="nav">
+      <img src="/images/image-hero-desktop.jpg" alt="hero" />
       <div className="nav__right">
         <div className="nav__logo">crowdfund</div>
       </div>

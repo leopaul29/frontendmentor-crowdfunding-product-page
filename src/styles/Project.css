@@ -4,5 +4,7 @@
   gap: 25px;
   padding: 0px 45px;
   padding-top: 45px;
-  margin-bottom: 100px;
+}
+.project__cards{
+  margin-bottom: 15px;
 }

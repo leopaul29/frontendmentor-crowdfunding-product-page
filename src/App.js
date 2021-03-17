@@ -26,6 +26,7 @@ export default function App() {
             "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
           daysLeft: "101",
           buttonText: "Select Reward",
+          isDisabled:false,
         },
         {
           key: "2",
@@ -35,6 +36,7 @@ export default function App() {
             "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
           daysLeft: "64",
           buttonText: "Select Reward",
+          isDisabled:false,
         },
         {
           key: "3",
@@ -44,6 +46,7 @@ export default function App() {
             "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
           daysLeft: "0",
           buttonText: "Out of Stock",
+          isDisabled:true,
         },
       ],
     },

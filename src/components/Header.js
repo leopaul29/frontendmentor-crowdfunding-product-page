@@ -13,7 +13,12 @@ export default function Header(props) {
         <h3 className="header__subtitle">{subtitle}</h3>
         <div className="header__actions">
           <div className="header__cta btn btn-primary">Back this project</div>
-          <div className="header__bookmark btn btn-secondary">Bookmark</div>
+          <div className="header__bookmark btn btn-secondary">
+            <span className="icon-bookmark">
+              <img src="/images/icon-bookmark.svg" alt="bookmark" />
+            </span>{" "}
+            Bookmark
+          </div>
         </div>
       </div>
     </header>
