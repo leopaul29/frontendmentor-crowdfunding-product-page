@@ -3,8 +3,15 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Project from "./components/Project";
 import Stats from "./components/Stats";
+import { useState } from "react";
 
 export default function App() {
+  const [totalBacked, setTotalBacked] = useState(89.914);
+
+  const increaseTotalBacked = () => {
+    setTotalBacked(totalBacked + 1);
+  };
+
   const content = {
     header: {
       title: "Mastercraft Bamboo Monitor Riser",
@@ -56,12 +63,13 @@ export default function App() {
       ],
     },
   };
+
   return (
     <div className="app">
       <Nav />
       <main className="main">
         <Header {...content.header} />
-        <Stats {...content.stats} />
+        <Stats increaseTotalBacked {...content.stats} />
         <Project {...content.project} />
       </main>
     </div>
