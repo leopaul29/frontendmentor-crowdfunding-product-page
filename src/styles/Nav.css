@@ -1,10 +1,17 @@
 .nav {
+  position: relative;
+}
+.nav__background {
+  position: absolute;
+  background-color: rgb(209, 109, 109);
+  z-index: -1;
+}
+.nav__navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 30px 150px;
   height: 350px;
-  background-color: rgb(209, 109, 109);
 }
 .nav__logo {
   font-size: 15px;
