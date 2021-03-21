@@ -11,6 +11,9 @@ export default function Project(props) {
   const btntoggleModal = () => {
     setToggleModal(!toggleModal);
   };
+  const off = () => {
+    setToggleModal(false);
+  };
 
   return (
     <div className="project tile">
@@ -18,13 +21,15 @@ export default function Project(props) {
       <p className="text">{aboutP1}</p>
       <p className="text">{aboutP2}</p>
       <button onClick={btntoggleModal}>test</button>
-
       <div
-        id="id01"
-        class={"w3-modal " + (toggleModal ? "modal-none" : "modal-block")}
+        class={"overlay " + (toggleModal ? "modal-block" : "modal-none")}
+        onClick={off}
       >
-        <Modal />
+        <div class="overlay__content">
+          <Modal />
+        </div>
       </div>
+
       <div className="project__cards">
         {cards.map((card) => (
           <Card key={card.key} {...card} />
