@@ -23,7 +23,6 @@ export default function Project(props) {
       <button onClick={btntoggleModal}>test</button>
       <div
         class={"overlay " + (toggleModal ? "modal-block" : "modal-none")}
-        onClick={off}
       >
         <div class="overlay__content">
           <Modal />

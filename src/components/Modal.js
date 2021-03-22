@@ -49,6 +49,7 @@ function Modal() {
   return (
     <div>
       <div className="project tile">
+        <span className="modal__close">X</span>
         <h2 className="project__title title">{modal.title}</h2>
         <p className="text">{modal.about}</p>
 
