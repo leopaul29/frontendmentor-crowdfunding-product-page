@@ -1,4 +1,5 @@
-import Card from "./Card";
+import ModalCard from "./ModalCard";
+import "../styles/Modal.css"
 
 function Modal() {
   const modal = {
@@ -48,14 +49,16 @@ function Modal() {
 
   return (
     <div>
-      <div className="project tile">
-        <span className="modal__close">X</span>
-        <h2 className="project__title title">{modal.title}</h2>
+      <div className="modal project tile">
+        <span className="modal__close">
+          <img src="./images/icon-close-modal.svg" alt="close-modal"/>
+        </span>
+        <h2 className="modal__title title">{modal.title}</h2>
         <p className="text">{modal.about}</p>
 
         <div className="project__cards">
           {modal.cards.map((card) => (
-            <Card key={card.key} {...card} />
+            <ModalCard key={card.key} {...card} />
           ))}
         </div>
         {/* 

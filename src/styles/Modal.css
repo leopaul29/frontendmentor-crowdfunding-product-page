@@ -1,0 +1,22 @@
+.modal__close {
+  align-self: flex-end;
+}
+.modalCard__title:hover {
+  color: var(--primary);
+}
+.modalCard__headerLeft {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.modalCard {
+  display: flex;
+  flex-direction: row;
+}
+.modalCard__selection {
+  width: 25px;
+  height: 25px;
+  border: solid 1px var(--extralightgray);
+  border-radius: 50%;
+}
