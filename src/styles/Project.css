@@ -25,8 +25,11 @@
 .overlay__content {
   margin: auto;
   max-width: 760px;
-  padding-top: 180px;
   overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
 }
 
 .modal-block {
