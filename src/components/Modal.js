@@ -15,6 +15,7 @@ function Modal() {
           "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
         daysLeft: "",
         isDisabled: false,
+        isSelected: true,
       },
       {
         key: "1",
@@ -24,6 +25,7 @@ function Modal() {
           "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
         daysLeft: "101",
         isDisabled: false,
+        isSelected: false,
       },
       {
         key: "2",
@@ -33,6 +35,7 @@ function Modal() {
           "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
         daysLeft: "64",
         isDisabled: false,
+        isSelected: false,
       },
       {
         key: "3",
@@ -43,6 +46,7 @@ function Modal() {
         daysLeft: "0",
         buttonText: "Out of Stock",
         isDisabled: true,
+        isSelected: false,
       },
     ],
   };

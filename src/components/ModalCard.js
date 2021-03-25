@@ -13,10 +13,19 @@ function ModalCard({
         (isDisabled ? "tile-disabled" : "")
       }
     >
-      <div className="modalCard__selection">
-        <div className="modalCard__selection"></div>
+      <div className="modalCard__left">
+        <div className="modalCard__selection">
+          <div
+            className={
+              "modalCard__selection " +
+              (isSelected ? "modalCard__selected" : "modalCard__notselected")
+            }
+          >
+            &nbsp;
+          </div>
+        </div>
       </div>
-      <div className="modalCard__body">
+      <div className="modalCard__right">
         <div className="card__header">
           <div className="modalCard__headerLeft">
             <div className="modalCard__title card__title title">{title}</div>
