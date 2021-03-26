@@ -1,7 +1,7 @@
-.nav__background {
-  position: fixed;
+.nav {
   background-color: rgb(209, 109, 109);
-  z-index: -1;
+  background-image: url("image-hero-desktop.jpg");
+  background-position: center;
 }
 .nav__navbar {
   display: flex;
