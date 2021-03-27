@@ -31,7 +31,7 @@ export default function App() {
         "Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.",
       cards: [
         {
-          key: "1",
+          id: "1",
           title: "Bamboo Stand",
           pledgeCost: "25",
           textAbout:
@@ -41,7 +41,7 @@ export default function App() {
           isDisabled: false,
         },
         {
-          key: "2",
+          id: "2",
           title: "Black Edition Stand",
           pledgeCost: "75",
           textAbout:
@@ -51,7 +51,7 @@ export default function App() {
           isDisabled: false,
         },
         {
-          key: "3",
+          id: "3",
           title: "Mahogany Special Edition",
           pledgeCost: "200",
           textAbout:

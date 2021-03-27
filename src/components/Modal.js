@@ -1,7 +1,7 @@
 import ModalCard from "./ModalCard";
-import "../styles/Modal.css"
+import "../styles/Modal.css";
 
-function Modal() {
+function Modal({ selectedCard, btntoggleModal }) {
   const modal = {
     title: "Back this project",
     about:
@@ -15,7 +15,7 @@ function Modal() {
           "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
         daysLeft: "",
         isDisabled: false,
-        isSelected: true,
+        isSelected: false,
       },
       {
         key: "1",
@@ -54,8 +54,8 @@ function Modal() {
   return (
     <div>
       <div className="modal project tile">
-        <span className="modal__close">
-          <img src="./images/icon-close-modal.svg" alt="close-modal"/>
+        <span className="modal__close" onClick={btntoggleModal}>
+          <img src="./images/icon-close-modal.svg" alt="close-modal" />
         </span>
         <h2 className="modal__title title">{modal.title}</h2>
         <p className="text">{modal.about}</p>

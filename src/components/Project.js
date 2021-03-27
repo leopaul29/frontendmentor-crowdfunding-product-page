@@ -9,12 +9,10 @@ export default function Project(props) {
 
   const [toggleModal, setToggleModal] = useState(false);
   const [toggleCheckModal, setToggleCheckModal] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(0);
 
   const btntoggleModal = () => {
     setToggleModal(!toggleModal);
-  };
-  const off = () => {
-    setToggleModal(false);
   };
   const btntoggleCheckModal = () => {
     setToggleCheckModal(!toggleCheckModal);
@@ -27,21 +25,27 @@ export default function Project(props) {
       <p className="text">{aboutP2}</p>
       <button onClick={btntoggleModal}>modal</button>
       <button onClick={btntoggleCheckModal}>check-modal</button>
-      <div class={"overlay " + (toggleModal ? "modal-block" : "modal-none")}>
-        <div class="overlay__content">
-          <Modal />
+      <div
+        className={"overlay " + (toggleModal ? "modal-block" : "modal-none")}
+      >
+        <div className="overlay__content">
+          <Modal selectedCard={selectedCard} btntoggleModal={btntoggleModal} />
         </div>
       </div>
-      
-      <div class={"overlay " + (toggleCheckModal ? "modal-block" : "modal-none")}>
-        <div class="overlay__content">
+
+      <div
+        className={
+          "overlay " + (toggleCheckModal ? "modal-block" : "modal-none")
+        }
+      >
+        <div className="overlay__content">
           <CheckModal />
         </div>
       </div>
 
       <div className="project__cards">
         {cards.map((card) => (
-          <Card key={card.key} {...card} />
+          <Card key={card.id} {...card} btntoggleModal={btntoggleModal} />
         ))}
       </div>
     </div>

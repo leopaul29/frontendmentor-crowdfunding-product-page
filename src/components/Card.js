@@ -1,12 +1,14 @@
 import "../styles/Card.css";
 
 export default function Card({
+  id,
   title,
   pledgeCost,
   textAbout,
   daysLeft,
   buttonText,
   isDisabled,
+  btntoggleModal,
 }) {
   return (
     <div
@@ -24,14 +26,18 @@ export default function Card({
           <p className="number">{daysLeft}</p>
           <p className="text">left</p>
         </div>
-        <div
-          className={
-            "card__button button btn btn-primary " +
-            (isDisabled ? "btn-disabled" : "")
-          }
-        >
-          {buttonText}
-        </div>
+        {isDisabled ? (
+          <div className="card__button button btn btn-primary btn-disabled">
+            {buttonText}
+          </div>
+        ) : (
+          <div
+            className="card__button button btn btn-primary "
+            onClick={btntoggleModal}
+          >
+            {buttonText}
+          </div>
+        )}
       </div>
     </div>
   );
