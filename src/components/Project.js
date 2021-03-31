@@ -9,7 +9,7 @@ export default function Project(props) {
 
   const [toggleModal, setToggleModal] = useState(false);
   const [toggleCheckModal, setToggleCheckModal] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(0);
+  const [selectedIndexCard, setSelectedIndexCard] = useState(0);
 
   const btntoggleModal = () => {
     setToggleModal(!toggleModal);
@@ -29,7 +29,11 @@ export default function Project(props) {
         className={"overlay " + (toggleModal ? "modal-block" : "modal-none")}
       >
         <div className="overlay__content">
-          <Modal selectedCard={selectedCard} btntoggleModal={btntoggleModal} />
+          <Modal
+            selectedIndexCard={selectedIndexCard}
+            setSelectedIndexCard={setSelectedIndexCard}
+            btntoggleModal={btntoggleModal}
+          />
         </div>
       </div>
 
@@ -45,7 +49,12 @@ export default function Project(props) {
 
       <div className="project__cards">
         {cards.map((card) => (
-          <Card key={card.id} {...card} btntoggleModal={btntoggleModal} />
+          <Card
+            key={card.id}
+            {...card}
+            btntoggleModal={btntoggleModal}
+            setSelectedIndexCard={setSelectedIndexCard}
+          />
         ))}
       </div>
     </div>

@@ -1,14 +1,15 @@
 import ModalCard from "./ModalCard";
 import "../styles/Modal.css";
+import { useEffect } from "react";
 
-function Modal({ selectedCard, btntoggleModal }) {
+function Modal({ selectedIndexCard, setSelectedIndexCard, btntoggleModal }) {
   const modal = {
     title: "Back this project",
     about:
       "Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?",
     cards: [
       {
-        key: "0",
+        id: "0",
         title: "Pledge with no reward",
         pledgeCost: "",
         textAbout:
@@ -18,7 +19,7 @@ function Modal({ selectedCard, btntoggleModal }) {
         isSelected: false,
       },
       {
-        key: "1",
+        id: "1",
         title: "Bamboo Stand",
         pledgeCost: "25",
         textAbout:
@@ -28,7 +29,7 @@ function Modal({ selectedCard, btntoggleModal }) {
         isSelected: false,
       },
       {
-        key: "2",
+        id: "2",
         title: "Black Edition Stand",
         pledgeCost: "75",
         textAbout:
@@ -38,7 +39,7 @@ function Modal({ selectedCard, btntoggleModal }) {
         isSelected: false,
       },
       {
-        key: "3",
+        id: "3",
         title: "Mahogany Special Edition",
         pledgeCost: "200",
         textAbout:
@@ -51,6 +52,15 @@ function Modal({ selectedCard, btntoggleModal }) {
     ],
   };
 
+  useEffect(() => {
+    console.log("modal.cards", modal.cards);
+    modal.cards.map((card) => {
+      if (card.id === selectedIndexCard) {
+        return (card.isSelected = true);
+      } else return false;
+    });
+  }, [selectedIndexCard]);
+
   return (
     <div>
       <div className="modal project tile">
@@ -62,7 +72,11 @@ function Modal({ selectedCard, btntoggleModal }) {
 
         <div className="project__cards">
           {modal.cards.map((card) => (
-            <ModalCard key={card.key} {...card} />
+            <ModalCard
+              key={card.id}
+              {...card}
+              setSelectedIndexCard={setSelectedIndexCard}
+            />
           ))}
         </div>
         {/* 

@@ -1,13 +1,16 @@
 function ModalCard({
+  id,
   title,
   pledgeCost,
   textAbout,
   daysLeft,
   isSelected,
   isDisabled,
+  setSelectedIndexCard
 }) {
+  
   return (
-    <div
+    <div onClick={setSelectedIndexCard}
       className={
         "modalCard card tile tile-padding " +
         (isDisabled ? "tile-disabled" : "")

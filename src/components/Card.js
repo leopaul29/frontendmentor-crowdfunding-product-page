@@ -9,7 +9,14 @@ export default function Card({
   buttonText,
   isDisabled,
   btntoggleModal,
+  setSelectedIndexCard,
 }) {
+  const openModal = () => {
+    setSelectedIndexCard({ id });
+    btntoggleModal();
+    console.log("card id", id);
+  };
+
   return (
     <div
       className={
@@ -33,7 +40,7 @@ export default function Card({
         ) : (
           <div
             className="card__button button btn btn-primary "
-            onClick={btntoggleModal}
+            onClick={openModal}
           >
             {buttonText}
           </div>
