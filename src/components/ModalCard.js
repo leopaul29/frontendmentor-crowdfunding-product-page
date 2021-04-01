@@ -46,6 +46,9 @@ function ModalCard({
           </div>
         </div>
         <div className="card__about">{textAbout}</div>
+        <div className="card__footer">
+          Footer collapsible
+        </div>
       </div>
     </div>
   );
