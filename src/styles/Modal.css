@@ -1,18 +1,22 @@
+/* MODAL */
 .modal__close {
   align-self: flex-end;
 }
-.modalCard__title:hover {
-  color: var(--primary);
+/* MODALCARD */
+.modalCard {
+  display: flex;
+  flex-direction: column;
+}
+.modalCard__top {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
 }
 .modalCard__headerLeft {
   display: flex;
   flex-direction: row;
   gap: 10px;
   align-items: center;
-}
-.modalCard {
-  display: flex;
-  flex-direction: row;
 }
 .modalCard__selection {
   display: flex;
@@ -28,5 +32,6 @@
   width: 22px;
   height: 22px;
 }
-.modalCard__notselected {
+.modalCard__title:hover {
+  color: var(--primary);
 }

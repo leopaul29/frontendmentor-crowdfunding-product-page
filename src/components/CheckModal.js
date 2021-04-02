@@ -14,7 +14,7 @@ export default function CheckModal() {
         Monitor Riser worldwide. You will get an email once our campaign is
         completed.
       </div>
-      <div className="card__button button btn btn-primary">Got it!</div>
+      <div className="btn btn-primary">Got it!</div>
     </div>
   );
 }
