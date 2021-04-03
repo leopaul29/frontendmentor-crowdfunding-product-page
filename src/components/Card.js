@@ -12,9 +12,8 @@ export default function Card({
   setSelectedIndexCard,
 }) {
   const openModal = () => {
-    setSelectedIndexCard({ id });
+    setSelectedIndexCard(id);
     btntoggleModal();
-    console.log("card id", id);
   };
 
   return (

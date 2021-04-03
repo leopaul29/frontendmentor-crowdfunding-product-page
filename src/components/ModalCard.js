@@ -8,9 +8,14 @@ function ModalCard({
   isDisabled,
   setSelectedIndexCard,
 }) {
+  const selectModalCard = () => {
+    console.log("selectModalCard", id)
+    setSelectedIndexCard(id);
+  };
+
   return (
     <div
-      onClick={setSelectedIndexCard}
+      onClick={selectModalCard}
       className={
         "modalCard card tile tile-padding " +
         (isDisabled ? "tile-disabled" : "")

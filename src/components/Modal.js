@@ -53,11 +53,13 @@ function Modal({ selectedIndexCard, setSelectedIndexCard, btntoggleModal }) {
   };
 
   useEffect(() => {
-    console.log("modal.cards", modal.cards);
+    //console.log("modal.cards", modal.cards);
     modal.cards.map((card) => {
       if (card.id === selectedIndexCard) {
-        return (card.isSelected = true);
-      } else return false;
+        console.log("selectedIndexCard true1", card);
+        card.isSelected = true;
+      }
+      return card;
     });
   }, [selectedIndexCard]);
 
