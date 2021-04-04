@@ -7,9 +7,10 @@ function ModalCard({
   isSelected,
   isDisabled,
   setSelectedIndexCard,
+  btntoggleCheckModal,
 }) {
   const selectModalCard = () => {
-    console.log("selectModalCard", id)
+    console.log("selectModalCard", id);
     setSelectedIndexCard(id);
   };
 
@@ -57,6 +58,7 @@ function ModalCard({
       <div className="modalCard__bottom">
         <div className="card__footer">
           Footer collapsible
+          <button onClick={btntoggleCheckModal}>check-modal</button>
           {/* 
 Enter your pledge
 $pledgeCost

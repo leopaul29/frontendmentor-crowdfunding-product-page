@@ -1,6 +1,7 @@
 import ModalCard from "./ModalCard";
 import "../styles/Modal.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import CheckModal from "./CheckModal";
 
 function Modal({ selectedIndexCard, setSelectedIndexCard, btntoggleModal }) {
   const modal = {
@@ -51,6 +52,11 @@ function Modal({ selectedIndexCard, setSelectedIndexCard, btntoggleModal }) {
       },
     ],
   };
+  const [toggleCheckModal, setToggleCheckModal] = useState(false);
+
+  const btntoggleCheckModal = () => {
+    setToggleCheckModal(!toggleCheckModal);
+  };
 
   useEffect(() => {
     //console.log("modal.cards", modal.cards);
@@ -76,9 +82,20 @@ function Modal({ selectedIndexCard, setSelectedIndexCard, btntoggleModal }) {
           <ModalCard
             key={card.id}
             {...card}
+            btntoggleCheckModal={btntoggleCheckModal}
             setSelectedIndexCard={setSelectedIndexCard}
           />
         ))}
+      </div>
+
+      <div
+        className={
+          "overlay " + (toggleCheckModal ? "modal-block" : "modal-none")
+        }
+      >
+        <div className="overlay__content">
+          <CheckModal />
+        </div>
       </div>
     </div>
   );

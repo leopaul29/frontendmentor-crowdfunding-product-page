@@ -8,14 +8,10 @@ export default function Project(props) {
   const { title, aboutP1, aboutP2, cards } = props;
 
   const [toggleModal, setToggleModal] = useState(false);
-  const [toggleCheckModal, setToggleCheckModal] = useState(false);
   const [selectedIndexCard, setSelectedIndexCard] = useState(0);
 
   const btntoggleModal = () => {
     setToggleModal(!toggleModal);
-  };
-  const btntoggleCheckModal = () => {
-    setToggleCheckModal(!toggleCheckModal);
   };
 
   return (
@@ -24,7 +20,6 @@ export default function Project(props) {
       <p className="text">{aboutP1}</p>
       <p className="text">{aboutP2}</p>
       <button onClick={btntoggleModal}>modal</button>
-      <button onClick={btntoggleCheckModal}>check-modal</button>
       <div
         className={"overlay " + (toggleModal ? "modal-block" : "modal-none")}
       >
@@ -34,16 +29,6 @@ export default function Project(props) {
             setSelectedIndexCard={setSelectedIndexCard}
             btntoggleModal={btntoggleModal}
           />
-        </div>
-      </div>
-
-      <div
-        className={
-          "overlay " + (toggleCheckModal ? "modal-block" : "modal-none")
-        }
-      >
-        <div className="overlay__content">
-          <CheckModal />
         </div>
       </div>
 
