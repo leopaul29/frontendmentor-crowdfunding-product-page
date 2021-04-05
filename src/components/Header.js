@@ -1,7 +1,8 @@
 import "../styles/Header.css";
+import { header } from "./Data";
 
-export default function Header(props) {
-  const { title, subtitle, mainButton, bookmarkButton } = props;
+export default function Header() {
+  const { title, subtitle } = header;
 
   return (
     <header className="header tile tile-padding">

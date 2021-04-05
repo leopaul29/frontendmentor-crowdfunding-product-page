@@ -3,9 +3,10 @@ import "../styles/Project.css";
 import Card from "./Card";
 import CheckModal from "./CheckModal";
 import Modal from "./Modal";
+import { project, cards } from "./Data";
 
-export default function Project(props) {
-  const { title, aboutP1, aboutP2, cards } = props;
+export default function Project() {
+  const { title, aboutP1, aboutP2 } = project;
 
   const [toggleModal, setToggleModal] = useState(false);
   const [selectedIndexCard, setSelectedIndexCard] = useState(0);
@@ -19,7 +20,7 @@ export default function Project(props) {
       <h2 className="project__title title">{title}</h2>
       <p className="text">{aboutP1}</p>
       <p className="text">{aboutP2}</p>
-      <button onClick={btntoggleModal}>modal</button>
+      
       <div
         className={"overlay " + (toggleModal ? "modal-block" : "modal-none")}
       >
