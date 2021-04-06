@@ -1,6 +1,6 @@
 import "../styles/CheckModal.css";
 
-export default function CheckModal() {
+export default function CheckModal({ closeAllModal }) {
   return (
     <div className="checkModal tile">
       <div className="checkModal__icon">
@@ -14,7 +14,9 @@ export default function CheckModal() {
         Monitor Riser worldwide. You will get an email once our campaign is
         completed.
       </div>
-      <div className="btn btn-primary">Got it!</div>
+      <div className="btn btn-primary" onClick={closeAllModal}>
+        Got it!
+      </div>
     </div>
   );
 }

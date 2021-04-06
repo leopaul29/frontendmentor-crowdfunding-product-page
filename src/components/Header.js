@@ -1,5 +1,5 @@
 import "../styles/Header.css";
-import { header } from "./Data";
+import { header } from "./TextData";
 
 export default function Header() {
   const { title, subtitle } = header;

@@ -9,13 +9,10 @@ export default function Card({
   buttonText,
   isDisabled,
   btntoggleModal,
-  setSelectedIndexCard,
 }) {
   const openModal = () => {
-    setSelectedIndexCard(id);
-    btntoggleModal();
+    btntoggleModal(id);
   };
-
   return (
     <div
       className={
