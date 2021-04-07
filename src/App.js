@@ -8,19 +8,16 @@ import CheckModal from "./components/CheckModal";
 import { useState } from "react";
 
 export default function App() {
-  const stats = {
-    totalBacked: 89.914,
-    totalBackers: 5.007,
-    daysLeft: 56,
-  };
-  const [totalBacked, setTotalBacked] = useState({
+  const [state, setState] = useState({
     totalBacked: 89.914,
     totalBackers: 5.007,
     daysLeft: 56,
   });
+
   const increaseTotalBacked = () => {
-    setTotalBacked(totalBacked + 1);
+    setState({ ...state, totalBacked: (state.totalBacked += 1) });
   };
+
   const [selectedIndexCard, setSelectedIndexCard] = useState(0);
   const [toggleModal, setToggleModal] = useState(false);
   const btntoggleModal = (id) => {
@@ -41,7 +38,7 @@ export default function App() {
       <Nav />
       <main className="main">
         <Header />
-        <Stats setTotalBacked={setTotalBacked} {...totalBacked} />
+        <Stats increaseTotalBacked={increaseTotalBacked} {...state} />
         <Project btntoggleModal={btntoggleModal} />
       </main>
 
