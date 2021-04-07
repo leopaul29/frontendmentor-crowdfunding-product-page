@@ -13,7 +13,11 @@ export default function App() {
     totalBackers: 5.007,
     daysLeft: 56,
   };
-  const [totalBacked, setTotalBacked] = useState(89.914);
+  const [totalBacked, setTotalBacked] = useState({
+    totalBacked: 89.914,
+    totalBackers: 5.007,
+    daysLeft: 56,
+  });
   const increaseTotalBacked = () => {
     setTotalBacked(totalBacked + 1);
   };
@@ -30,15 +34,14 @@ export default function App() {
   const closeAllModal = () => {
     setToggleCheckModal(false);
     setToggleModal(false);
-
-  }
+  };
 
   return (
     <div className="app">
       <Nav />
       <main className="main">
         <Header />
-        <Stats increaseTotalBacked {...stats} />
+        <Stats setTotalBacked={setTotalBacked} {...totalBacked} />
         <Project btntoggleModal={btntoggleModal} />
       </main>
 
@@ -57,14 +60,13 @@ export default function App() {
       </div>
 
       <div
+        id="checkModal"
         className={
           "overlay " + (toggleCheckModal ? "modal-block" : "modal-none")
         }
       >
         <div className="overlay__content">
-          <CheckModal
-            closeAllModal={closeAllModal}
-          />
+          <CheckModal closeAllModal={closeAllModal} />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import ModalCard from "./ModalCard";
 import "../styles/Modal.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { modal, cards } from "./TextData";
 
 function Modal({

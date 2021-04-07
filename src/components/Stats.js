@@ -1,7 +1,13 @@
 import "../styles/Stats.css";
 
 export default function Stats(props) {
-  const { totalBacked, totalBackers, daysLeft, increaseTotalBacked } = props;
+  //const { totalBacked, totalBackers, daysLeft, increaseTotalBacked } = props;
+  console.log("props, ", props);
+  const { totalBacked, totalBackers, daysLeft, setTotalBacked } = props;
+
+  const increaseTotalBacked = () => {
+    totalBacked = totalBacked + 1;
+  };
 
   return (
     <div className="stats tile tile-padding">
@@ -24,9 +30,7 @@ export default function Stats(props) {
       <div className="progress progress-grey">
         <div className="progress progress-primary"></div>
       </div>
-      <button onClick={() => increaseTotalBacked()}>
-rez
-      </button>
+      <button onClick={() => increaseTotalBacked()}>rez</button>
     </div>
   );
 }

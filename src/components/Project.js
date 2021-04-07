@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../styles/Project.css";
 import Card from "./Card";
 import { project, cards } from "./TextData";
@@ -13,7 +12,7 @@ export default function Project({ btntoggleModal, setSelectedIndexCard }) {
       <p className="text">{aboutP2}</p>
       <div className="project__cards">
         {cards.map((card, i) =>
-          i == 0 ? (
+          i === 0 ? (
             ""
           ) : (
             <Card
