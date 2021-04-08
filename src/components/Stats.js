@@ -2,18 +2,27 @@ import { useEffect, useState } from "react";
 import "../styles/Stats.css";
 
 export default function Stats(props) {
-  //const { totalBacked, totalBackers, daysLeft, increaseTotalBacked } = props;
-  const { increaseTotalBacked, totalBacked, totalBackers, daysLeft } = props;
+  const {
+    increaseTotalBacked,
+    totalBacked,
+    totalToBack,
+    totalBackers,
+    daysLeft,
+  } = props;
+
+  const [progressPercent, setProgressPercent] = useState(
+    (totalBacked / totalToBack) * 100
+  );
+  useEffect(() => {
+    setProgressPercent((totalBacked / totalToBack) * 100);
+  }, [totalBacked]);
 
   const [progressStyle, setProgressStyle] = useState({
-    width: (totalBacked / 100000) * 100 + "%",
+    width: progressPercent + "%",
   });
   useEffect(() => {
-    setProgressStyle({ width: (totalBacked / 100000) * 100 + "%" });
-    if (progressStyle <= 0) setProgressStyle({ width: 0 + "%" });
-    if (progressStyle >= 100) setProgressStyle({ width: 100 + "%" });
-    console.info("progressStyle", progressStyle);
-  }, [totalBacked]);
+    setProgressStyle({ width: progressPercent + "%" });
+  }, [progressPercent]);
   return (
     <div className="stats tile tile-padding">
       <div className="stats__row">

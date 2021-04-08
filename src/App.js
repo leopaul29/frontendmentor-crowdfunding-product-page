@@ -10,12 +10,18 @@ import { useState } from "react";
 export default function App() {
   const [state, setState] = useState({
     totalBacked: 89914,
+    totalToBack: 100000,
     totalBackers: 5007,
     daysLeft: 56,
   });
 
   const increaseTotalBacked = () => {
-    setState({ ...state, totalBacked: (state.totalBacked += 1000) });
+    let countToAdd = 1000;
+    let sumBacked = state.totalBacked + countToAdd;
+    if (sumBacked <= 0) sumBacked = 0;
+    if (sumBacked >= state.totalToBack) sumBacked = state.totalToBack;
+
+    setState({ ...state, totalBacked: (state.totalBacked = sumBacked) });
   };
 
   const [selectedIndexCard, setSelectedIndexCard] = useState(0);
