@@ -9,13 +9,13 @@ import { useState } from "react";
 
 export default function App() {
   const [state, setState] = useState({
-    totalBacked: 89.914,
-    totalBackers: 5.007,
+    totalBacked: 89914,
+    totalBackers: 5007,
     daysLeft: 56,
   });
 
   const increaseTotalBacked = () => {
-    setState({ ...state, totalBacked: (state.totalBacked += 1) });
+    setState({ ...state, totalBacked: (state.totalBacked += 1000) });
   };
 
   const [selectedIndexCard, setSelectedIndexCard] = useState(0);
