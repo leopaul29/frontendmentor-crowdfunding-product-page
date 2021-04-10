@@ -1,9 +1,3 @@
-export const header = {
-  title: "Mastercraft Bamboo Monitor Riser",
-  subtitle:
-    "A beautiful & handcrafted monitor stand to reduce neck and eye strain.",
-};
-
 export const stats = {
   totalBacked: 89.914,
   totalBackers: 5.007,

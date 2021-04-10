@@ -43,7 +43,7 @@ export default function App() {
     <div className="app">
       <Nav />
       <main className="main">
-        <Header />
+        <Header btntoggleModal={btntoggleModal} />
         <Stats increaseTotalBacked={increaseTotalBacked} {...state} />
         <Project btntoggleModal={btntoggleModal} />
       </main>

@@ -1,8 +1,9 @@
+import { useState } from "react";
 import "../styles/Header.css";
-import { header } from "./TextData";
 
-export default function Header() {
-  const { title, subtitle } = header;
+export default function Header(props) {
+  const { btntoggleModal } = props;
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
     <header className="header tile tile-padding">
@@ -10,15 +11,25 @@ export default function Header() {
         <img src="./images/logo-mastercraft.svg" alt="logo-mastercraft" />
       </div>
       <div className="header__content">
-        <h1 className="header__title">{title}</h1>
-        <h3 className="header__subtitle">{subtitle}</h3>
+        <h1 className="header__title">Mastercraft Bamboo Monitor Riser</h1>
+        <h3 className="header__subtitle">
+          A beautiful & handcrafted monitor stand to reduce neck and eye strain.
+        </h3>
         <div className="header__actions">
-          <div className="header__cta btn btn-primary">Back this project</div>
-          <div className="header__bookmark btn btn-secondary">
+          <div className="header__cta btn btn-primary" onClick={btntoggleModal}>
+            Back this project
+          </div>
+          <div
+            className={
+              "header__bookmark btn " +
+              (isBookmarked ? "btn-bookmarked" : "btn-bookmark")
+            }
+            onClick={() => setIsBookmarked(!isBookmarked)}
+          >
             <span className="icon-bookmark">
               <img src="/images/icon-bookmark.svg" alt="bookmark" />
             </span>{" "}
-            Bookmark
+            {isBookmarked ? "Bookmarked" : "Bookmark"}
           </div>
         </div>
       </div>
