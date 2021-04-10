@@ -15,7 +15,7 @@ export default function Stats(props) {
   );
   useEffect(() => {
     setProgressPercent((totalBacked / totalToBack) * 100);
-  }, [totalBacked]);
+  }, [totalBacked, totalToBack]);
 
   const [progressStyle, setProgressStyle] = useState({
     width: progressPercent + "%",
