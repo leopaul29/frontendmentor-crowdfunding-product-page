@@ -34,4 +34,36 @@
   gap: 15px;
   padding: 0px;
   padding-right: 30px;
+  background-color: hsl(0, 0%, 95%);
+}
+/* BOOKMARK */
+.btn-bookmark {
+  color: var(--secondary);
+}
+.btn-bookmark .icon-bookmark circle {
+  fill: #2f2f2f;
+}
+.btn-bookmark .icon-bookmark path {
+  fill: #b1b1b1;
+}
+.btn-bookmark:hover .icon-bookmark circle {
+  fill: var(--gray);
+}
+
+/* BOOKMARKED */
+.btn-bookmarked {
+  color: var(--primary);
+  background-color: hsl(0, 0%, 95%);
+}
+.btn-bookmarked .icon-bookmark circle {
+  fill: var(--primary);
+}
+.btn-bookmarked .icon-bookmark circle {
+  fill: var(--primary);
+}
+.btn-bookmarked:hover {
+  color: var(--primary-active);
+}
+.btn-bookmarked:hover .icon-bookmark circle {
+  fill: var(--primary-active);
 }

@@ -87,12 +87,6 @@ body {
 .btn-primary:hover {
   background-color: var(--primary-active);
 }
-.btn-secondary {
-  background-color: var(--secondary);
-}
-.btn-secondary:hover {
-  background-color: var(--secondary-active);
-}
 .btn-disabled {
   cursor: default;
   background-color: var(--secondary);

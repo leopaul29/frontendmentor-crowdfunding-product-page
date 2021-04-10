@@ -3,7 +3,6 @@ import "../styles/Header.css";
 
 export default function Header(props) {
   const { btntoggleModal } = props;
-  const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
     <header className="header tile tile-padding">
@@ -19,20 +18,33 @@ export default function Header(props) {
           <div className="header__cta btn btn-primary" onClick={btntoggleModal}>
             Back this project
           </div>
-          <div
-            className={
-              "header__bookmark btn " +
-              (isBookmarked ? "btn-bookmarked" : "btn-bookmark")
-            }
-            onClick={() => setIsBookmarked(!isBookmarked)}
-          >
-            <span className="icon-bookmark">
-              <img src="/images/icon-bookmark.svg" alt="bookmark" />
-            </span>{" "}
-            {isBookmarked ? "Bookmarked" : "Bookmark"}
-          </div>
+          <BookmarkBtn />
         </div>
       </div>
     </header>
+  );
+}
+
+function BookmarkBtn() {
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  return (
+    <div
+      className={
+        "header__bookmark btn " +
+        (isBookmarked ? "btn-bookmarked" : "btn-bookmark")
+      }
+      onClick={() => setIsBookmarked(!isBookmarked)}
+    >
+      <span className="icon-bookmark">
+        <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" fill-rule="evenodd">
+            <circle fill="#147b74" cx="28" cy="28" r="28" />
+            <path fill="#FFF" d="M23 19v18l5-5.058L33 37V19z" />
+          </g>
+        </svg>
+      </span>{" "}
+      {isBookmarked ? "Bookmarked" : "Bookmark"}
+    </div>
   );
 }
