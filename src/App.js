@@ -44,7 +44,7 @@ export default function App() {
       <Nav />
       <main className="main">
         <Header btntoggleModal={btntoggleModal} />
-        <Stats increaseTotalBacked={increaseTotalBacked} {...state} />
+        <Stats {...state} />
         <Project btntoggleModal={btntoggleModal} />
       </main>
 

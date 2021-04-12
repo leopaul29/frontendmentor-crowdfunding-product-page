@@ -3,7 +3,6 @@ import "../styles/Stats.css";
 
 export default function Stats(props) {
   const {
-    increaseTotalBacked,
     totalBacked,
     totalToBack,
     totalBackers,
@@ -44,7 +43,6 @@ export default function Stats(props) {
       <div className="progress progress-grey">
         <div className="progress progress-primary" style={progressStyle}></div>
       </div>
-      <button onClick={increaseTotalBacked}>rez</button>
     </div>
   );
 }
