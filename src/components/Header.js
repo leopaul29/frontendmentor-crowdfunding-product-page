@@ -2,8 +2,11 @@ import { useState } from "react";
 import "../styles/Header.css";
 
 export default function Header(props) {
-  const { btntoggleModal } = props;
+  const { btntoggleModal } = props.fct;
 
+  const openModal = () => {
+    btntoggleModal(0);
+  };
   return (
     <header className="header tile tile-padding">
       <div className="header__logo">
@@ -15,7 +18,7 @@ export default function Header(props) {
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
         </h3>
         <div className="header__actions">
-          <div className="header__cta btn btn-primary" onClick={btntoggleModal}>
+          <div className="header__cta btn btn-primary" onClick={openModal}>
             Back this project
           </div>
           <BookmarkBtn />
@@ -38,7 +41,7 @@ function BookmarkBtn() {
     >
       <span className="icon-bookmark">
         <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" fill-rule="evenodd">
+          <g fill="none" fillRule="evenodd">
             <circle fill="#147b74" cx="28" cy="28" r="28" />
             <path fill="#FFF" d="M23 19v18l5-5.058L33 37V19z" />
           </g>

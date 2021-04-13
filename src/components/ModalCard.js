@@ -1,16 +1,16 @@
-function ModalCard({
-  id,
-  title,
-  pledgeCost,
-  textAbout,
-  daysLeft,
-  isSelected,
-  isDisabled,
-  setSelectedIndexCard,
-  btntoggleCheckModal,
-}) {
+function ModalCard(props) {
+  const {
+    id,
+    title,
+    pledgeCost,
+    textAbout,
+    daysLeft,
+    isSelected,
+    isDisabled,
+  } = props;
+  const { setSelectedIndexCard, btntoggleCheckModal } = props.fct;
+
   const selectModalCard = () => {
-    console.log("selectModalCard", id);
     setSelectedIndexCard(id);
   };
 

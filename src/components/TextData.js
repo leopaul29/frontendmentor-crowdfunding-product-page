@@ -25,7 +25,6 @@ export const cards = [
       "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
     daysLeft: "",
     isDisabled: false,
-    isSelected: false,
   },
   {
     id: "1",
@@ -36,7 +35,6 @@ export const cards = [
     daysLeft: "101",
     buttonText: "Select Reward",
     isDisabled: false,
-    isSelected: false,
   },
   {
     id: "2",
@@ -47,7 +45,6 @@ export const cards = [
     daysLeft: "64",
     buttonText: "Select Reward",
     isDisabled: false,
-    isSelected: false,
   },
   {
     id: "3",
@@ -58,6 +55,5 @@ export const cards = [
     daysLeft: "0",
     buttonText: "Out of Stock",
     isDisabled: true,
-    isSelected: false,
   },
 ];

@@ -6,15 +6,9 @@ import Stats from "./components/Stats";
 import Modal from "./components/Modal";
 import CheckModal from "./components/CheckModal";
 import { useState } from "react";
+import { cards } from "./components/TextData";
 
 export default function App() {
-  const [state, setState] = useState({
-    totalBacked: 89914,
-    totalToBack: 100000,
-    totalBackers: 5007,
-    daysLeft: 56,
-  });
-
   const increaseTotalBacked = () => {
     let countToAdd = 1000;
     let sumBacked = state.totalBacked + countToAdd;
@@ -24,9 +18,9 @@ export default function App() {
     setState({ ...state, totalBacked: (state.totalBacked = sumBacked) });
   };
 
-  const [selectedIndexCard, setSelectedIndexCard] = useState(0);
   const [toggleModal, setToggleModal] = useState(false);
   const btntoggleModal = (id) => {
+    if (id == null) id = 0;
     setSelectedIndexCard(id);
     setToggleModal(!toggleModal);
   };
@@ -39,11 +33,39 @@ export default function App() {
     setToggleModal(false);
   };
 
+  const setSelectedIndexCard = (id) => {
+    setState({ ...state, selectedIndexCard: (state.selectedIndexCard = id) });
+    if (cards[id].isDisabled) return;
+    cards.map((card) => {
+      if (card.id === id && !card.isDisabled) {
+        card.isSelected = true;
+      } else {
+        card.isSelected = false;
+      }
+      return card;
+    });
+  };
+
+  const [state, setState] = useState({
+    totalBacked: 89914,
+    totalToBack: 100000,
+    totalBackers: 5007,
+    daysLeft: 56,
+    selectedIndexCard: 0,
+    fct: {
+      increaseTotalBacked: increaseTotalBacked,
+      setSelectedIndexCard: setSelectedIndexCard,
+      btntoggleModal: btntoggleModal,
+      btntoggleCheckModal: btntoggleCheckModal,
+      closeAllModal: closeAllModal,
+    },
+  });
+
   return (
     <div className="app">
       <Nav />
       <main className="main">
-        <Header btntoggleModal={btntoggleModal} />
+        <Header {...state} />
         <Stats {...state} />
         <Project btntoggleModal={btntoggleModal} />
       </main>
@@ -53,12 +75,7 @@ export default function App() {
         className={"overlay " + (toggleModal ? "modal-block" : "modal-none")}
       >
         <div className="overlay__content">
-          <Modal
-            selectedIndexCard={selectedIndexCard}
-            setSelectedIndexCard={setSelectedIndexCard}
-            btntoggleModal={btntoggleModal}
-            btntoggleCheckModal={btntoggleCheckModal}
-          />
+          <Modal {...state} />
         </div>
       </div>
 
