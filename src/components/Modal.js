@@ -1,7 +1,6 @@
 import ModalCard from "./ModalCard";
 import "../styles/Modal.css";
 import { modal, cards } from "./TextData";
-import { useState } from "react";
 
 function Modal(props) {
   const { closeAllModal } = props.fct;

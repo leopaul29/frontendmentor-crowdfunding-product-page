@@ -7,6 +7,9 @@
   display: flex;
   flex-direction: column;
 }
+.modalCard--selected{
+  border: solid 2px var(--primary);
+}
 .modalCard__top {
   display: flex;
   flex-direction: row;
@@ -15,7 +18,7 @@
 .modalCard__headerLeft {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
 }
 .modalCard__selection {
@@ -27,11 +30,17 @@
   border: solid 1px var(--extralightgray);
   border-radius: 50%;
 }
-.modalCard__selected {
+.modalCard__selection--selected {
   background-color: var(--primary);
-  width: 22px;
-  height: 22px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }
 .modalCard__title:hover {
   color: var(--primary);
+  cursor: pointer;
+}
+
+.modalCard__selection:hover {
+  border: solid 2px var(--primary);
 }

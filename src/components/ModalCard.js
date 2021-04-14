@@ -19,17 +19,15 @@ function ModalCard(props) {
       onClick={selectModalCard}
       className={
         "modalCard card tile tile-padding " +
-        (isDisabled ? "tile-disabled" : "")
+        (isDisabled ? "tile-disabled" : "") +
+        (isSelected ? "modalCard--selected" : "")
       }
     >
       <div className="modalCard__top">
         <div className="modalCard__left">
           <div className="modalCard__selection">
             <div
-              className={
-                "modalCard__selection " +
-                (isSelected ? "modalCard__selected" : "modalCard__notselected")
-              }
+              className={isSelected ? "modalCard__selection--selected" : ""}
             >
               &nbsp;
             </div>
@@ -55,16 +53,20 @@ function ModalCard(props) {
           <div className="card__about">{textAbout}</div>
         </div>
       </div>
-      <div className="modalCard__bottom">
-        <div className="card__footer">
-          Footer collapsible
-          <button onClick={btntoggleCheckModal}>check-modal</button>
-          {/* 
+      {isSelected ? (
+        <div className="modalCard__bottom">
+          <div className="card__footer">
+            Footer collapsible
+            <button onClick={btntoggleCheckModal}>check-modal</button>
+            {/* 
 Enter your pledge
 $pledgeCost
 Continue */}
+          </div>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
