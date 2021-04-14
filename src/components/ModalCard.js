@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 function ModalCard(props) {
   const {
     id,
@@ -8,8 +10,19 @@ function ModalCard(props) {
     isSelected,
     isDisabled,
   } = props;
+  useEffect(() => {
+    setPrice(pledgeCost);
+  }, [])
   const { setSelectedIndexCard, btntoggleCheckModal } = props.fct;
-
+  const [price, setPrice] = useState(0);
+  const [canContinue, setCanContinue] = useState(true);
+  const handleChangePrice = (e) => {
+    setPrice(e.target.value);
+  };
+  useEffect(() => {
+    setCanContinue(true);
+    if (Number(price) < Number(pledgeCost)) setCanContinue(false);
+  }, [price])
   const selectModalCard = () => {
     setSelectedIndexCard(id);
   };
@@ -26,9 +39,7 @@ function ModalCard(props) {
       <div className="modalCard__top">
         <div className="modalCard__left">
           <div className="modalCard__selection">
-            <div
-              className={isSelected ? "modalCard__selection--selected" : ""}
-            >
+            <div className={isSelected ? "modalCard__selection--selected" : ""}>
               &nbsp;
             </div>
           </div>
@@ -50,18 +61,28 @@ function ModalCard(props) {
               )}
             </div>
           </div>
-          <div className="card__about">{textAbout}</div>
+          <div className="modalCard__about card__about">{textAbout}</div>
         </div>
       </div>
       {isSelected ? (
         <div className="modalCard__bottom">
-          <div className="card__footer">
-            Footer collapsible
-            <button onClick={btntoggleCheckModal}>check-modal</button>
-            {/* 
-Enter your pledge
-$pledgeCost
-Continue */}
+          <div className="modalCard__footer">
+            <div className="modalCard__footerLeft">Enter your pledge</div>
+            <div className="modalCard__footerRight">
+              <input
+                type="text"
+                className="modalCard__pledgeCost "
+                value={price}
+                onChange={(e) => handleChangePrice(e)}
+              />
+              {canContinue ? (
+                <div onClick={btntoggleCheckModal} className="btn btn-primary">
+                  Continue
+                </div>
+              ) : (
+                <div className="btn btn-primary btn-disabled">Continue</div>
+              )}
+            </div>
           </div>
         </div>
       ) : (

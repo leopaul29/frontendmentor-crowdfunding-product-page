@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
 }
-.modalCard--selected{
+.modalCard--selected {
   border: solid 2px var(--primary);
 }
 .modalCard__top {
@@ -40,7 +40,33 @@
   color: var(--primary);
   cursor: pointer;
 }
-
 .modalCard__selection:hover {
   border: solid 2px var(--primary);
+}
+.modalCard__bottom {
+  border-top: solid 1px var(--extralightgray);
+  padding: 10px;
+}
+.modalCard__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.modalCard__footerRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.modalCard__pledgeCost {
+  width: 100px;
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.modalCard__about {
+  padding-top: 20px;
 }
