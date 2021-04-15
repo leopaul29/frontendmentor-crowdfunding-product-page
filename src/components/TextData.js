@@ -15,7 +15,7 @@ export const modal = {
   title: "Back this project",
   about:
     "Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?",
-}
+};
 export const cards = [
   {
     id: "0",
@@ -23,7 +23,7 @@ export const cards = [
     pledgeCost: "",
     textAbout:
       "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
-    daysLeft: "",
+    countLeft: "",
     isDisabled: false,
   },
   {
@@ -32,7 +32,7 @@ export const cards = [
     pledgeCost: "25",
     textAbout:
       "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
-    daysLeft: "101",
+    countLeft: "1",
     buttonText: "Select Reward",
     isDisabled: false,
   },
@@ -42,7 +42,7 @@ export const cards = [
     pledgeCost: "75",
     textAbout:
       "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
-    daysLeft: "64",
+    countLeft: "64",
     buttonText: "Select Reward",
     isDisabled: false,
   },
@@ -52,7 +52,7 @@ export const cards = [
     pledgeCost: "200",
     textAbout:
       "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
-    daysLeft: "0",
+    countLeft: "0",
     buttonText: "Out of Stock",
     isDisabled: true,
   },

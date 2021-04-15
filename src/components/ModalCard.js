@@ -1,30 +1,59 @@
 import { useEffect, useState } from "react";
 
 function ModalCard(props) {
+  // props
   const {
     id,
     title,
     pledgeCost,
     textAbout,
-    daysLeft,
+    countLeft,
     isSelected,
     isDisabled,
   } = props;
-  useEffect(() => {
-    setPrice(pledgeCost);
-  }, [])
-  const { setSelectedIndexCard, btntoggleCheckModal } = props.fct;
+  const {
+    increaseTotalBacked,
+    setSelectedIndexCard,
+    btntoggleCheckModal,
+  } = props.fct;
+  // state
   const [price, setPrice] = useState(0);
   const [canContinue, setCanContinue] = useState(true);
-  const handleChangePrice = (e) => {
-    setPrice(e.target.value);
-  };
+  const [cardNumber, setCardNumber] = useState(countLeft);
+  const [disableCard, setDisableCard] = useState(isDisabled);
+  const [selectedCard, setSelectedCard] = useState(isSelected);
+  // effect
   useEffect(() => {
     setCanContinue(true);
     if (Number(price) < Number(pledgeCost)) setCanContinue(false);
-  }, [price])
+  }, [price, pledgeCost]);
+  useEffect(() => {
+    setPrice(pledgeCost);
+  }, [pledgeCost]);
+  useEffect(() => {
+    if (cardNumber === 0) {
+      setDisableCard(true);
+      setSelectedCard(false);
+    }
+  }, [cardNumber]);
+  // fonctions
   const selectModalCard = () => {
     setSelectedIndexCard(id);
+    setSelectedCard(isSelected);
+  };
+  const handleChangePrice = (e) => {
+    setPrice(e.target.value);
+  };
+  const payModalCard = () => {
+    increaseTotalBacked(price);
+    if (cardNumber) {
+      setCardNumber(cardNumber - 1);
+      if (cardNumber === 0) {
+        setDisableCard(true);
+      }
+    }
+
+    btntoggleCheckModal();
   };
 
   return (
@@ -32,14 +61,16 @@ function ModalCard(props) {
       onClick={selectModalCard}
       className={
         "modalCard card tile tile-padding " +
-        (isDisabled ? "tile-disabled" : "") +
-        (isSelected ? "modalCard--selected" : "")
+        (disableCard ? "tile-disabled" : "") +
+        (selectedCard ? "modalCard--selected" : "")
       }
     >
       <div className="modalCard__top">
         <div className="modalCard__left">
           <div className="modalCard__selection">
-            <div className={isSelected ? "modalCard__selection--selected" : ""}>
+            <div
+              className={selectedCard ? "modalCard__selection--selected" : ""}
+            >
               &nbsp;
             </div>
           </div>
@@ -53,9 +84,9 @@ function ModalCard(props) {
               )}
             </div>
             <div className="modalCard__headerRight">
-              {daysLeft && (
-                <div className="card__daysLeft">
-                  <p className="number">{daysLeft}</p>
+              {cardNumber && (
+                <div className="card__countLeft">
+                  <p className="number">{cardNumber}</p>
                   <p className="text">left</p>
                 </div>
               )}
@@ -64,7 +95,7 @@ function ModalCard(props) {
           <div className="modalCard__about card__about">{textAbout}</div>
         </div>
       </div>
-      {isSelected ? (
+      {selectedCard ? (
         <div className="modalCard__bottom">
           <div className="modalCard__footer">
             <div className="modalCard__footerLeft">Enter your pledge</div>
@@ -76,7 +107,7 @@ function ModalCard(props) {
                 onChange={(e) => handleChangePrice(e)}
               />
               {canContinue ? (
-                <div onClick={btntoggleCheckModal} className="btn btn-primary">
+                <div onClick={payModalCard} className="btn btn-primary">
                   Continue
                 </div>
               ) : (

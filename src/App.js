@@ -9,24 +9,28 @@ import { useState } from "react";
 import { cards } from "./components/TextData";
 
 export default function App() {
-  const increaseTotalBacked = () => {
-    let countToAdd = 1000;
-    let sumBacked = state.totalBacked + countToAdd;
+  // states
+  const [toggleModal, setToggleModal] = useState(false);
+  const [toggleCheckModal, setToggleCheckModal] = useState(false);
+  // fonctions
+  const increaseTotalBacked = (moneyToAdd) => {
+    let sumBacked = state.totalBacked + moneyToAdd;
     if (sumBacked <= 0) sumBacked = 0;
     if (sumBacked >= state.totalToBack) sumBacked = state.totalToBack;
 
     setState({ ...state, totalBacked: (state.totalBacked = sumBacked) });
   };
 
-  const [toggleModal, setToggleModal] = useState(false);
   const btntoggleModal = (id) => {
     if (id == null) id = 0;
     setSelectedIndexCard(id);
     setToggleModal(!toggleModal);
   };
-  const [toggleCheckModal, setToggleCheckModal] = useState(false);
   const btntoggleCheckModal = () => {
-    setToggleCheckModal(!toggleCheckModal);
+    // close modal
+    setToggleModal(false);
+    // open modal validate
+    setToggleCheckModal(true);
   };
   const closeAllModal = () => {
     setToggleCheckModal(false);
