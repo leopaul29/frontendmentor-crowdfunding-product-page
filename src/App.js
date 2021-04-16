@@ -38,8 +38,8 @@ export default function App() {
   };
 
   const setSelectedIndexCard = (id) => {
+    console.log("id", id)
     setState({ ...state, selectedIndexCard: (state.selectedIndexCard = id) });
-    if (cards[id].isDisabled) return;
     cards.map((card) => {
       if (card.id === id && !card.isDisabled) {
         card.isSelected = true;

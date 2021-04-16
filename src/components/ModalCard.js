@@ -38,8 +38,9 @@ function ModalCard(props) {
   }, [cardNumber]);
   // fonctions
   const selectModalCard = () => {
-    setSelectedIndexCard(id);
-    setSelectedCard(isSelected);
+    if (!disableCard) {
+      setSelectedIndexCard(id);
+    }
   };
   const handleChangePrice = (e) => {
     setPrice(e.target.value);
