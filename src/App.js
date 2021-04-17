@@ -15,11 +15,28 @@ export default function App() {
   const [cardsState, setCardsState] = useState(cards);
   // fonctions
   const increaseTotalBacked = (moneyToAdd) => {
-    let sumBacked = state.totalBacked + moneyToAdd;
+    let sumBacked = Number(state.totalBacked) + Number(moneyToAdd);
     if (sumBacked <= 0) sumBacked = 0;
-    if (sumBacked >= state.totalToBack) sumBacked = state.totalToBack;
+    if (sumBacked >= state.totalToBack) {
+      sumBacked = state.totalToBack;
+      backProjectEnd();
+    }
 
     setState({ ...state, totalBacked: (state.totalBacked = sumBacked) });
+  };
+
+  const backProjectEnd = () => {
+    // change all card to disabled and 0 countLeft
+    cardsState.map((card) => {
+      card.isDisabled = true;
+      card.countLeft = 0;
+      return card;
+    });
+    setCardsState(cardsState);
+
+    // cannot back project anymore
+    state.canBackProject = false;
+    setState(state);
   };
 
   const btntoggleModal = (id) => {
@@ -48,24 +65,23 @@ export default function App() {
       }
       return card;
     });
+    setCardsState(cardsState);
   };
   const setDisabled = (id, isDisabled) => {
     cardsState[id].isDisabled = isDisabled;
-    //setCardsState({ ...cardsState, update });
+    setCardsState(cardsState);
   };
   const setCountLeft = (id, countLeft) => {
-    console.log("id", id)
-    console.log("countLeft", countLeft)
     cardsState[id].countLeft = countLeft;
-    console.log("cardsState", cardsState)
-    //setCardsState({ ...cardsState, update });
+    setCardsState(cardsState);
   };
   const setSelected = (id, isSelected) => {
     cardsState[id].isSelected = isSelected;
-    //setCardsState({ ...cardsState, update });
+    setCardsState(cardsState);
   };
 
   const [state, setState] = useState({
+    canBackProject: true,
     totalBacked: 89914,
     totalToBack: 100000,
     totalBackers: 5007,

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/Header.css";
 
 export default function Header(props) {
+  const { canBackProject } = props;
   const { btntoggleModal } = props.fct;
 
   const openModal = () => {
@@ -18,9 +19,13 @@ export default function Header(props) {
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
         </h3>
         <div className="header__actions">
-          <div className="header__cta btn btn-primary" onClick={openModal}>
-            Back this project
-          </div>
+          {canBackProject ? (
+            <div className="header__cta btn btn-primary" onClick={openModal}>
+              Back this project
+            </div>
+          ) : (
+            <div className="header__cta btn btn-disabled">Project backed</div>
+          )}
           <BookmarkBtn />
         </div>
       </div>

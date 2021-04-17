@@ -35,7 +35,7 @@ function ModalCard({ card, state }) {
       setDisabled(id, true);
       setSelected(id, false);
     }
-  }, [countLeft]);
+  }, [id, countLeft, setDisabled, setSelected]);
   // fonctions
   const selectModalCard = () => {
     if (!isDisabled) {
@@ -46,7 +46,7 @@ function ModalCard({ card, state }) {
     setPrice(e.target.value);
   };
   const payModalCard = () => {
-    console.info("payModalCard")
+    console.info("price", price);
     increaseTotalBacked(price);
     if (countLeft) {
       setCountLeft(id, countLeft - 1);
