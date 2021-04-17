@@ -1,8 +1,8 @@
 import "../styles/Project.css";
 import Card from "./Card";
-import { project, cards } from "./TextData";
+import { project } from "./TextData";
 
-export default function Project({ btntoggleModal, setSelectedIndexCard }) {
+export default function Project({ cardsState, fct }) {
   const { title, aboutP1, aboutP2 } = project;
 
   return (
@@ -11,15 +11,14 @@ export default function Project({ btntoggleModal, setSelectedIndexCard }) {
       <p className="text">{aboutP1}</p>
       <p className="text">{aboutP2}</p>
       <div className="project__cards">
-        {cards.map((card, i) =>
+        {cardsState.map((card, i) =>
           i === 0 ? (
             ""
           ) : (
             <Card
               key={card.id}
-              {...card}
-              btntoggleModal={btntoggleModal}
-              setSelectedIndexCard={setSelectedIndexCard}
+              card={card}
+              fct={fct}
             />
           )
         )}

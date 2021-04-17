@@ -1,9 +1,9 @@
 import ModalCard from "./ModalCard";
 import "../styles/Modal.css";
-import { modal, cards } from "./TextData";
+import { modal } from "./TextData";
 
-function Modal(props) {
-  const { closeAllModal } = props.fct;
+function Modal({cardsState, state}) {
+  const { closeAllModal } = state.fct;
   return (
     <div className="modal project tile">
       <span className="modal__close" onClick={closeAllModal}>
@@ -13,8 +13,8 @@ function Modal(props) {
       <p className="text">{modal.about}</p>
 
       <div className="project__cards">
-        {cards.map((card) => (
-          <ModalCard key={card.id} {...card} {...props} />
+        {cardsState.map((card) => (
+          <ModalCard key={card.id} card={card} state={state} />
         ))}
       </div>
     </div>

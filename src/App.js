@@ -12,6 +12,7 @@ export default function App() {
   // states
   const [toggleModal, setToggleModal] = useState(false);
   const [toggleCheckModal, setToggleCheckModal] = useState(false);
+  const [cardsState, setCardsState] = useState(cards);
   // fonctions
   const increaseTotalBacked = (moneyToAdd) => {
     let sumBacked = state.totalBacked + moneyToAdd;
@@ -38,9 +39,8 @@ export default function App() {
   };
 
   const setSelectedIndexCard = (id) => {
-    console.log("id", id)
     setState({ ...state, selectedIndexCard: (state.selectedIndexCard = id) });
-    cards.map((card) => {
+    cardsState.map((card) => {
       if (card.id === id && !card.isDisabled) {
         card.isSelected = true;
       } else {
@@ -48,6 +48,21 @@ export default function App() {
       }
       return card;
     });
+  };
+  const setDisabled = (id, isDisabled) => {
+    cardsState[id].isDisabled = isDisabled;
+    //setCardsState({ ...cardsState, update });
+  };
+  const setCountLeft = (id, countLeft) => {
+    console.log("id", id)
+    console.log("countLeft", countLeft)
+    cardsState[id].countLeft = countLeft;
+    console.log("cardsState", cardsState)
+    //setCardsState({ ...cardsState, update });
+  };
+  const setSelected = (id, isSelected) => {
+    cardsState[id].isSelected = isSelected;
+    //setCardsState({ ...cardsState, update });
   };
 
   const [state, setState] = useState({
@@ -59,6 +74,9 @@ export default function App() {
     fct: {
       increaseTotalBacked: increaseTotalBacked,
       setSelectedIndexCard: setSelectedIndexCard,
+      setDisabled: setDisabled,
+      setCountLeft: setCountLeft,
+      setSelected: setSelected,
       btntoggleModal: btntoggleModal,
       btntoggleCheckModal: btntoggleCheckModal,
       closeAllModal: closeAllModal,
@@ -71,7 +89,7 @@ export default function App() {
       <main className="main">
         <Header {...state} />
         <Stats {...state} />
-        <Project btntoggleModal={btntoggleModal} />
+        <Project cardsState={cardsState} fct={state.fct} />
       </main>
 
       <div
@@ -79,7 +97,7 @@ export default function App() {
         className={"overlay " + (toggleModal ? "modal-block" : "modal-none")}
       >
         <div className="overlay__content">
-          <Modal {...state} />
+          <Modal cardsState={cardsState} state={state} />
         </div>
       </div>
 
