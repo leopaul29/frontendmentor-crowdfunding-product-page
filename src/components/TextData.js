@@ -1,15 +1,11 @@
-export const stats = {
-  totalBacked: 89.914,
-  totalBackers: 5.007,
-  daysLeft: 56,
-};
-
 export const project = {
   title: "About this project",
   aboutP1:
     "The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.",
   aboutP2:
     "Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.",
+  btnTextActive: "Select Reward",
+  btnTextDisabled: "Out of Stock",
 };
 export const modal = {
   title: "Back this project",
@@ -33,7 +29,6 @@ export const cards = [
     textAbout:
       "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
     countLeft: "1",
-    buttonText: "Select Reward",
     isDisabled: false,
   },
   {
@@ -43,7 +38,6 @@ export const cards = [
     textAbout:
       "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
     countLeft: "64",
-    buttonText: "Select Reward",
     isDisabled: false,
   },
   {
@@ -53,7 +47,6 @@ export const cards = [
     textAbout:
       "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
     countLeft: "0",
-    buttonText: "Out of Stock",
     isDisabled: true,
   },
 ];

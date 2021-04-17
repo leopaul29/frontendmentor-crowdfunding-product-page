@@ -1,15 +1,10 @@
 import "../styles/Card.css";
+import { project } from "./TextData";
 
-export default function Card({
-  id,
-  title,
-  pledgeCost,
-  textAbout,
-  daysLeft,
-  buttonText,
-  isDisabled,
-  btntoggleModal,
-}) {
+export default function Card({ card, fct }) {
+  const { id, title, pledgeCost, textAbout, countLeft, isDisabled } = card;
+  const { btntoggleModal } = fct;
+  const { btnTextActive, btnTextDisabled } = project;
   const openModal = () => {
     btntoggleModal(id);
   };
@@ -26,19 +21,19 @@ export default function Card({
       <div className="card__about">{textAbout}</div>
       <div className="card__footer">
         <div className="card__daysLeft">
-          <p className="number">{daysLeft}</p>
+          <p className="number">{countLeft}</p>
           <p className="text">left</p>
         </div>
         {isDisabled ? (
           <div className="card__button button btn btn-primary btn-disabled">
-            {buttonText}
+            {btnTextDisabled}
           </div>
         ) : (
           <div
             className="card__button button btn btn-primary "
             onClick={openModal}
           >
-            {buttonText}
+            {btnTextActive}
           </div>
         )}
       </div>
