@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/ModalCard.css";
 
 function ModalCard({ card, state }) {
   // props
@@ -62,59 +63,58 @@ function ModalCard({ card, state }) {
     <div
       onClick={selectModalCard}
       className={
-        "modalCard card tile tile-padding " +
+        " card tile tile-padding " +
         (isDisabled ? "tile-disabled" : "") +
         (isSelected ? "modalCard--selected" : "")
       }
     >
-      <div className="modalCard__top">
-        <div className="modalCard__left">
-          <div className="modalCard__selection">
-            <div className={isSelected ? "modalCard__selection--selected" : ""}>
-              &nbsp;
-            </div>
+      <div className="modalCard">
+        <div className="modalCard__selectionCol">
+        <div className="modalCard__selection">
+          <div className={isSelected ? "modalCard__selection--selected" : ""}>
+            &nbsp;
           </div>
+        </div></div>
+        <div className="modalCard__header">
+          <div className="modalCard__title card__title title">{title}</div>
+          {pledgeCost && (
+            <div className="modalCard__pledge card__pledge">
+              Pledge ${pledgeCost} or more
+            </div>
+          )}
         </div>
-        <div className="modalCard__right">
-          <div className="card__header">
-            <div className="modalCard__headerLeft">
-              <div className="modalCard__title card__title title">{title}</div>
-              {pledgeCost && (
-                <div className="card__pledge">Pledge ${pledgeCost} or more</div>
-              )}
-            </div>
-            <div className="modalCard__headerRight">
-              {countLeft && (
-                <div className="card__countLeft">
-                  <p className="number">{countLeft}</p>
-                  <p className="text">left</p>
-                </div>
-              )}
-            </div>
+
+        {countLeft && (
+          <div className="modalCard__countLeft card__countLeft">
+            <p className="number">{countLeft}</p>
+            <p className="text">left</p>
           </div>
-          <div className="modalCard__about card__about">{textAbout}</div>
-        </div>
+        )}
+        <div className="modalCard__about card__about">{textAbout}</div>
       </div>
+      {/* bottom part */}
       {isSelected ? (
-        <div className="modalCard__bottom">
-          <div className="modalCard__footer">
-            <div className="modalCard__footerLeft">Enter your pledge</div>
-            <div className="modalCard__footerRight">
-              <input
-                type="text"
-                className="modalCard__pledgeCost "
-                value={price}
-                onChange={(e) => handleChangePrice(e)}
-              />
-              {canContinue ? (
-                <div onClick={payModalCard} className="btn btn-primary">
-                  Continue
-                </div>
-              ) : (
-                <div className="btn btn-primary btn-disabled">Continue</div>
-              )}
+        <div className="modalCard__footer">
+          <div className="modalCard__footerText">Enter your pledge</div>
+
+          <input
+            type="text"
+            className="modalCard__footerInput "
+            value={price}
+            onChange={(e) => handleChangePrice(e)}
+          />
+          {canContinue ? (
+            <div
+              onClick={payModalCard}
+              className="modalCard__footerBtn btn btn-primary"
+            >
+              Continue
             </div>
-          </div>
+          ) : (
+            <div className="modalCard__footerBtn btn btn-primary btn-disabled">
+              Continue
+            </div>
+          )}
         </div>
       ) : (
         ""

@@ -37,22 +37,41 @@ function BookmarkBtn() {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
-    <div
-      className={
-        "header__bookmark btn " +
-        (isBookmarked ? "btn-bookmarked" : "btn-bookmark")
-      }
-      onClick={() => setIsBookmarked(!isBookmarked)}
-    >
-      <span className="icon-bookmark">
-        <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" fillRule="evenodd">
-            <circle fill="#147b74" cx="28" cy="28" r="28" />
-            <path fill="#FFF" d="M23 19v18l5-5.058L33 37V19z" />
-          </g>
-        </svg>
-      </span>{" "}
-      {isBookmarked ? "Bookmarked" : "Bookmark"}
-    </div>
+    <>
+      <div
+        className={
+          "header__bookmark btn " +
+          (isBookmarked ? "btn-bookmarked" : "btn-bookmark")
+        }
+        onClick={() => setIsBookmarked(!isBookmarked)}
+      >
+        <span className="icon-bookmark">
+          <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fillRule="evenodd">
+              <circle fill="#147b74" cx="28" cy="28" r="28" />
+              <path fill="#FFF" d="M23 19v18l5-5.058L33 37V19z" />
+            </g>
+          </svg>
+        </span>{" "}
+        {isBookmarked ? "Bookmarked" : "Bookmark"}
+      </div>
+
+      <div
+        className={
+          "header__bookmark_mobile btn " +
+          (isBookmarked ? "btn-bookmarked" : "btn-bookmark")
+        }
+        onClick={() => setIsBookmarked(!isBookmarked)}
+      >
+        <span className="icon-bookmark">
+          <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fillRule="evenodd">
+              <circle fill="#147b74" cx="28" cy="28" r="28" />
+              <path fill="#FFF" d="M23 19v18l5-5.058L33 37V19z" />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </>
   );
 }

@@ -1,14 +1,13 @@
 .nav {
   background-color: rgb(209, 109, 109);
-  background-image: url("image-hero-desktop.jpg");
-  background-position: center;
+  background-image: url("image-hero-mobile.jpg");
 }
 .nav__navbar {
   padding: 30px;
-  height: 350px;
+  height: 500px;
 }
 .nav__logo {
-  font-size: 21px;
+  font-size: 32px;
   font-weight: 700;
   color: white;
   cursor: pointer;
@@ -17,12 +16,15 @@
   display: none;
 }
 @media only screen and (min-width: 600px) {
+  .nav {
+    background-image: url("image-hero-desktop.jpg");
+  }
   .nav__navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 30px;
-    height: 350px;
+    height: 400px;
   }
   .nav__logo {
     font-size: 15px;

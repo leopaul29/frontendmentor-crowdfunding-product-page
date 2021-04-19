@@ -28,7 +28,7 @@ export const cards = [
     pledgeCost: "25",
     textAbout:
       "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
-    countLeft: "1",
+    countLeft: "101",
     isDisabled: false,
   },
   {

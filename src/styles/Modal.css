@@ -2,71 +2,11 @@
 .modal__close {
   align-self: flex-end;
 }
-/* MODALCARD */
-.modalCard {
-  display: flex;
-  flex-direction: column;
-}
-.modalCard--selected {
-  border: solid 2px var(--primary);
-}
-.modalCard__top {
-  display: flex;
-  flex-direction: row;
-  gap: 25px;
-}
-.modalCard__headerLeft {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-}
-.modalCard__selection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  border: solid 1px var(--extralightgray);
-  border-radius: 50%;
-}
-.modalCard__selection--selected {
-  background-color: var(--primary);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-}
-.modalCard__title:hover {
-  color: var(--primary);
-  cursor: pointer;
-}
-.modalCard__selection:hover {
-  border: solid 2px var(--primary);
-}
-.modalCard__bottom {
-  border-top: solid 1px var(--extralightgray);
-  padding: 10px;
-}
-.modalCard__footer {
+.modal__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
-.modalCard__footerRight {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-.modalCard__pledgeCost {
-  width: 100px;
-  border-radius: 50px;
-  padding: 15px 30px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.modalCard__about {
-  padding-top: 20px;
+
+@media only screen and (min-width: 600px) {
 }

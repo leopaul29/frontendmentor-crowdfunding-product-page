@@ -1,7 +1,7 @@
 .header__logo {
   position: absolute;
   top: -30px;
-  left: 50%;
+  left: 42%;
 }
 .header__content {
   display: flex;
@@ -21,20 +21,16 @@
   font-size: 24px;
   font-weight: 700;
   color: var(--black);
+  text-align: center;
+  padding: 0px 40px;
 }
 .header__subtitle {
   font-weight: 400;
   color: var(--gray);
+  text-align: center;
 }
 .header__bookmark {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 15px;
-  padding: 0px;
-  padding-right: 30px;
-  background-color: hsl(0, 0%, 95%);
+  display: none;
 }
 /* BOOKMARK */
 .btn-bookmark {
@@ -66,4 +62,33 @@
 }
 .btn-bookmarked:hover .icon-bookmark circle {
   fill: var(--primary-active);
+}
+
+@media only screen and (min-width: 600px) {
+  .header__actions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+  }
+  .header__bookmark {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    padding: 0px;
+    padding-right: 30px;
+    background-color: hsl(0, 0%, 95%);
+  }
+  .header__bookmark_mobile {
+    display: none;
+  }
+  .header__logo {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+  }
 }
