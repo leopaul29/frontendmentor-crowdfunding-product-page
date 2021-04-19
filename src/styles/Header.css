@@ -49,7 +49,6 @@
 /* BOOKMARKED */
 .btn-bookmarked {
   color: var(--primary);
-  background-color: hsl(0, 0%, 95%);
 }
 .btn-bookmarked .icon-bookmark circle {
   fill: var(--primary);
@@ -90,5 +89,9 @@
     position: absolute;
     top: -30px;
     left: 50%;
+  }
+  .btn-bookmarked {
+    color: var(--primary);
+    background-color: hsl(0, 0%, 95%);
   }
 }
