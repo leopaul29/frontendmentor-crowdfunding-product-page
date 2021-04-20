@@ -44,6 +44,12 @@
 .menu__itemBurger:nth-child(3) {
   border-bottom: 0px;
 }
+.nav__menuBurger--show{
+  display: block;
+}
+.nav__menuBurger--hide{
+  display: none;
+}
 @media only screen and (min-width: 600px) {
   .nav {
     background-image: url("image-hero-desktop.jpg");
@@ -66,5 +72,8 @@
   }
   .menu__item {
     color: white;
+  }
+  .nav__menuBurger--show{
+    display: none;
   }
 }

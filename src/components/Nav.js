@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../styles/Nav.css";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [burgerStyle, setBurgerStyle] = useState({ display: "none" });
-  useEffect(() => {
-    menuOpen
-      ? setBurgerStyle({ display: "block" })
-      : setBurgerStyle({ display: "none" });
-  }, [menuOpen]);
-
   return (
     <nav className="nav">
       <div className="nav__navbar">
@@ -28,7 +21,12 @@ export default function Nav() {
             <li className="menu__item">Discover</li>
             <li className="menu__item">Get Started</li>
           </ul>
-          <ul className="nav__menuBurger" style={burgerStyle}>
+          <ul
+            className={
+              "nav__menuBurger " +
+              (menuOpen ? "nav__menuBurger--show" : "nav__menuBurger--hide")
+            }
+          >
             <li className="menu__itemBurger">About</li>
             <li className="menu__itemBurger">Discover</li>
             <li className="menu__itemBurger">Get Started</li>
