@@ -6,8 +6,8 @@ export default function Nav() {
   const [burgerStyle, setBurgerStyle] = useState({ display: "none" });
   useEffect(() => {
     menuOpen
-      ? setBurgerStyle({ display: "none" })
-      : setBurgerStyle({ display: "block" });
+      ? setBurgerStyle({ display: "block" })
+      : setBurgerStyle({ display: "none" });
   }, [menuOpen]);
 
   return (
