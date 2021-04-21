@@ -29,7 +29,7 @@
   border-radius: 30px;
   border: var(--extralightgray) 1px solid;
   flex-direction: column;
-  width: 300px;
+  width: calc(100% - 60px);
 }
 .menu__itemBurger {
   color: black;

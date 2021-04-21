@@ -7,7 +7,9 @@ export default function Nav() {
     <nav className="nav">
       <div className="nav__navbar">
         <div className="nav__right">
-          <div className="nav__logo">crowdfund</div>
+          <a href="/#" className="nav__logo">
+            crowdfund
+          </a>
         </div>
         <div className="nav__left">
           <span
@@ -17,9 +19,15 @@ export default function Nav() {
             <img src="./images/icon-hamburger.svg" alt="menu-burger" />
           </span>
           <ul className="nav__menu">
-            <li className="menu__item">About</li>
-            <li className="menu__item">Discover</li>
-            <li className="menu__item">Get Started</li>
+            <a href="/#" className="menu__item">
+              About
+            </a>
+            <a href="/#" className="menu__item">
+              Discover
+            </a>
+            <a href="/#" className="menu__item">
+              Get Started
+            </a>
           </ul>
           <ul
             className={
@@ -27,9 +35,15 @@ export default function Nav() {
               (menuOpen ? "nav__menuBurger--show" : "nav__menuBurger--hide")
             }
           >
-            <li className="menu__itemBurger">About</li>
-            <li className="menu__itemBurger">Discover</li>
-            <li className="menu__itemBurger">Get Started</li>
+            <a href="/#" className="menu__itemBurger">
+              About
+            </a>
+            <a href="/#" className="menu__itemBurger">
+              Discover
+            </a>
+            <a href="/#" className="menu__itemBurger">
+              Get Started
+            </a>
           </ul>
         </div>
       </div>

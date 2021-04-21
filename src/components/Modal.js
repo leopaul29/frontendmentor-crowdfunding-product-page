@@ -14,11 +14,11 @@ function Modal({ cardsState, state }) {
       </div>
       <p className="text">{modal.about}</p>
 
-      <div className="project__cards">
+      <form className="project__cards">
         {cardsState.map((card) => (
           <ModalCard key={card.id} card={card} state={state} />
         ))}
-      </div>
+      </form>
     </div>
   );
 }

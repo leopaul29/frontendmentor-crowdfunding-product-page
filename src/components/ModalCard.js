@@ -70,11 +70,8 @@ function ModalCard({ card, state }) {
     >
       <div className="modalCard">
         <div className="modalCard__selectionCol">
-        <div className="modalCard__selection">
-          <div className={isSelected ? "modalCard__selection--selected" : ""}>
-            &nbsp;
-          </div>
-        </div></div>
+          <input type="radio" name="reward" checked={isSelected} autofocus />
+        </div>
         <div className="modalCard__header">
           <div className="modalCard__title card__title title">{title}</div>
           {pledgeCost && (
@@ -100,16 +97,16 @@ function ModalCard({ card, state }) {
           <input
             type="text"
             className="modalCard__footerInput "
-            value={price}
+            value={isSelected ? price : ""}
             onChange={(e) => handleChangePrice(e)}
           />
           {canContinue ? (
-            <div
+            <button
               onClick={payModalCard}
               className="modalCard__footerBtn btn btn-primary"
             >
               Continue
-            </div>
+            </button>
           ) : (
             <div className="modalCard__footerBtn btn btn-primary btn-disabled">
               Continue

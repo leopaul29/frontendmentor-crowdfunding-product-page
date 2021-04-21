@@ -1,4 +1,4 @@
-.modalCard__selection {
+input[type="radio"]  {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,21 +7,18 @@
   border: solid 1px var(--extralightgray);
   border-radius: 50%;
 }
+button {
+  border: 0px;
+}
+input[type="text"]  {
+  border: solid 2px var(--extralightgray);
+}
 .modalCard__title:hover {
   color: var(--primary);
   cursor: pointer;
 }
 .modalCard--selected {
   border: solid 2px var(--primary);
-}
-.modalCard__selection:hover {
-  border: solid 2px var(--primary);
-}
-.modalCard__selection--selected {
-  background-color: var(--primary);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
 }
 /* MODALCARD GRID */
 .modalCard {
