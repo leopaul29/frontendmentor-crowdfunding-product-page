@@ -94,3 +94,16 @@ We love receiving feedback! We're always looking to improve our challenges and o
 This challenge is completely free. Please share it with anyone who will find it useful for practice.
 
 **Have fun building!** 🚀
+
+## Challenge completed
+Junior level - From 12/03/2021 to 20/04/2021 
+
+### Learned 👨‍🎓
+Mobile and Desktop UI with responsive components using React.
+
+### Difficulties 🙇
+* Mobile UI
+* Burger menu
+* Overall state of the app with React
+* Make a proper style sheet for component
+* Manage same components in different layout (Cards in project and Cards in the modal)
