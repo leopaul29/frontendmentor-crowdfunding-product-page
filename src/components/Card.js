@@ -21,7 +21,7 @@ export default function Card({ card, fct }) {
       <div className="card__about">{textAbout}</div>
       <div className="card__footer">
         <div className="card__daysLeft">
-          <p className="number">{countLeft}</p>
+          <p className="card__number number">{countLeft}</p>
           <p className="text">left</p>
         </div>
         {isDisabled ? (

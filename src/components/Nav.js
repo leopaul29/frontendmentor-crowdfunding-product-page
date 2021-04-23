@@ -6,12 +6,12 @@ export default function Nav() {
   return (
     <nav className="nav">
       <div className="nav__navbar">
-        <div className="nav__right">
+        <div className="nav__left">
           <a href="/#" className="nav__logo">
             crowdfund
           </a>
         </div>
-        <div className="nav__left">
+        <div className="nav__right">
           <span
             onClick={() => setMenuOpen(!menuOpen)}
             className="nav__menuBurgerIcon"

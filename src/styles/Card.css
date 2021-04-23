@@ -27,6 +27,9 @@
 .card__about {
   line-height: 1.6;
 }
+.card__number {
+  font-size: 35px;
+}
 @media only screen and (min-width: 600px) {
   .card__header {
     display: flex;

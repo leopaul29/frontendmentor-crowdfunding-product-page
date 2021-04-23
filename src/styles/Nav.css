@@ -44,10 +44,10 @@
 .menu__itemBurger:nth-child(3) {
   border-bottom: 0px;
 }
-.nav__menuBurger--show{
+.nav__menuBurger--show {
   display: block;
 }
-.nav__menuBurger--hide{
+.nav__menuBurger--hide {
   display: none;
 }
 @media only screen and (min-width: 600px) {
@@ -55,11 +55,11 @@
     background-image: url("image-hero-desktop.jpg");
     height: 400px;
   }
-  .nav__logo {
-    font-size: 15px;
+  .nav__navbar {
+    padding: 30px;
   }
-  .nav__left {
-    display: block;
+  .nav__logo {
+    font-size: 25px;
   }
   .nav__menuBurger,
   .nav__menuBurgerIcon {
@@ -73,7 +73,13 @@
   .menu__item {
     color: white;
   }
-  .nav__menuBurger--show{
+  .nav__menuBurger--show {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .nav__navbar {
+    padding: 35px 170px;
   }
 }

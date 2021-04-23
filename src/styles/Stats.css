@@ -1,5 +1,4 @@
 .stats {
-  text-align: center;
 }
 .stats__row {
   display: flex;
@@ -27,6 +26,9 @@
 .progress-primary {
   background-color: var(--primary);
 }
+.stats__number{
+  font-size: 35px;
+}
 @media only screen and (min-width: 600px) {
   .stats {
     display: flex;
@@ -43,7 +45,7 @@
     transform: rotate(90deg);
   }
   .stats__inner {
-    width: 150px;
+    width: 300px;
   }
   .progress {
     height: 10px;
