@@ -70,7 +70,7 @@ function ModalCard({ card, state }) {
     >
       <div className="modalCard">
         <div className="modalCard__selectionCol">
-          <input type="radio" name="reward" checked={isSelected} autofocus />
+          <input type="radio" name="reward" checked={isSelected} />
         </div>
         <div className="modalCard__header">
           <div className="modalCard__title card__title title">{title}</div>

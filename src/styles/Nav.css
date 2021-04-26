@@ -72,6 +72,7 @@
   }
   .menu__item {
     color: white;
+    font-size: 14px;
   }
   .nav__menuBurger--show {
     display: none;
@@ -80,6 +81,6 @@
 
 @media only screen and (min-width: 1050px) {
   .nav__navbar {
-    padding: 35px 170px;
+    padding: 40px 170px;
   }
 }
